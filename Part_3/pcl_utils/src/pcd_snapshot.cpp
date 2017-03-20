@@ -27,7 +27,7 @@ void kinectCB(const sensor_msgs::PointCloud2ConstPtr& cloud) {
 int main(int argc, char** argv) {
     ros::init(argc, argv, "pcl_snapshot_main"); //node name
     ros::NodeHandle nh;
-    ros::Subscriber pointcloud_subscriber = nh.subscribe("/camera/depth_registered/points", 1, kinectCB);
+    ros::Subscriber pointcloud_subscriber = nh.subscribe("/kinect2/qhd/points", 1, kinectCB);
 
     //spin until obtain a snapshot
     ROS_INFO("waiting for kinect data");
